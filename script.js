@@ -11,7 +11,7 @@ checkBtn.addEventListener("click", () => {
         window.alert("Please provide a phone number");
     }
 
-    const regex = /^(1\s?)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/g;
+    const regex = /^(1\s?)?(\(\d{3}\)|\d{3})[\s.-]?\d{3}[\s.-]?\d{4}$/;
     
     if(regex.test(input)){
         output.innerText= "Valid US number: " + input;
@@ -24,12 +24,6 @@ checkBtn.addEventListener("click", () => {
 clearBtn.addEventListener('click', () => {
     output.innerText = "";
 });
-
-// running tests
-// When the #user-input element contains 1 555)555-5555 and the #check-btn element is clicked, the #results-div element should contain the text "Invalid US number: 1 555)555-5555".
-// When the #user-input element contains 555)-555-5555 and the #check-btn element is clicked, the #results-div element should contain the text "Invalid US number: 555)-555-5555".
-// When the #user-input element contains (555-555-5555 and the #check-btn element is clicked, the #results-div element should contain the text "Invalid US number: (555-555-5555".
-// tests completed
 
 /*
  * 1 555-555-5555
